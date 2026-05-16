@@ -1,111 +1,117 @@
-<?php
-$pageTitle =
-"Navjeevan Junior College";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'includes/head.php'; ?>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajasthan Relief Society</title>
+  <meta
+    name="description"
+    content="Rajasthan Relief Society connects students and families with trusted academic programs, values-led learning, and a supportive campus community."
+  />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
 <body>
-  <?php include 'includes/header.php'; ?>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.php" aria-label="Rajasthan Relief Society home">
+        <img src="images/Logo.jpg" alt="Rajasthan Relief Society logo" />
+        <span>Rajasthan Relief Society</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#institutions">Institutions</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-content">
-        <h1>Welcome to Navjeevan Junior College</h1>
-        <p>Building brighter futures through modern learning, caring faculty, and real-world skills.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="admissions.php">Apply Now</a>
-          <a class="btn btn-secondary" href="courses.php">Explore Courses</a>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Learning with purpose</p>
+          <h1>Navjeevan builds confident learners for every next step.</h1>
+          <p>
+            A growing education community in Mumbai focused on strong academics,
+            steady guidance, and values that help students move forward with clarity.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/index.php">Visit Junior College</a>
+            <a class="btn btn-secondary" href="#institutions">Explore Institutions</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="features container">
-      <article>
-        <h2>Expert Faculty</h2>
-        <p>Learn from experienced educators who focus on personalized growth.</p>
-      </article>
-      <article>
-        <h2>Modern Curriculum</h2>
-        <p>Programs designed to prepare students for the future of work and life.</p>
-      </article>
-      <article>
-        <h2>Student Support</h2>
-        <p>Committed support services to help students stay motivated and succeed.</p>
-      </article>
+    <section class="section-band" id="institutions">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Our institutions</p>
+          <h2>Choose the Navjeevan section you want to visit.</h2>
+        </div>
+        <div class="institution-grid">
+          <article class="institution-card">
+            <div>
+              <p class="card-kicker">Active site</p>
+              <h3>Navjeevan Junior College</h3>
+              <p>
+                Courses, admissions, campus details, contact information, and student-focused
+                resources for Junior College families.
+              </p>
+            </div>
+            <a class="text-link" href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/index.php">Open Junior College</a>
+          </article>
+          <article class="institution-card muted">
+            <div>
+              <p class="card-kicker">Coming soon</p>
+              <h3>Additional Navjeevan Programs</h3>
+              <p>
+                The main domain is ready to grow as new sections, school pages,
+                announcements, and shared resources are added.
+              </p>
+            </div>
+            <span class="text-link disabled">In planning</span>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="principal-message">
-        <div class="container principal-container">
-            <div class="principal-image">
-                <img src="images/principal.jpg" alt="Principal">
-            </div>
-            <div class="principal-content">
-
-                <h2>Principal's Message</h2>
-                <p>
-                    Welcome to Navjeevan Junior College.
-                    Our institution is committed to providing
-                    quality education while nurturing values,
-                    discipline, and innovation among students.
-                </p>
-                <p>
-                    Under the academic guidance of experienced
-                    educators, we strive to create an environment
-                    where students can achieve both academic and
-                    personal excellence.
-                </p>
-                <h4>
-                    Dr. Harishchandra Tripathi
-                </h4>
-            </div>
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About Navjeevan</p>
+          <h2>Education rooted in guidance, discipline, and opportunity.</h2>
         </div>
+        <div class="about-copy">
+          <p>
+            Navjeevan supports students with a balanced environment where academics,
+            personal development, and practical readiness work together.
+          </p>
+          <p>
+            This main domain now acts as the central entry point, while dedicated
+            institution pages can live in their own folders.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section class="gallery">
-        <div class="container">
-            <h2>Campus Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/gallery/campus-1.webp" alt="Campus Buildings">
-                    <p>Campus View</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/campus-2.jpeg" alt="Campus Grounds">
-                    <p>Campus Grounds</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/campus-3.jpg" alt="College Entrance">
-                    <p>College Entrance</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/computer-lab-1.webp" alt="Computer Lab">
-                    <p>Computer Lab</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/chemistry-lab.webp" alt="Chemistry Lab">
-                    <p>Chemistry Lab</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/classPhoto.jpg" alt="Class Photo">
-                    <p>Class Activity</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/annual-day-5.webp" alt="Annual Day Celebration">
-                    <p>Annual Day Event</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/annual-day-7.webp" alt="Student Awards Ceremony">
-                    <p>Awards Ceremony</p>
-                </div>
-            </div>
+    <section class="contact-strip" id="contact">
+      <div class="container contact-inner">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Need admission or campus information?</h2>
         </div>
+        <a class="btn btn-primary" href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/contact.php">Contact Junior College</a>
+      </div>
     </section>
   </main>
 
-  <?php include 'includes/footer.php'; ?>
-
-  <script src="js/script.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Rajasthan Relief Society. All rights reserved.</p>
+      <a href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/privacy-policy.php">Privacy Policy</a>
+    </div>
+  </footer>
 </body>
 </html>

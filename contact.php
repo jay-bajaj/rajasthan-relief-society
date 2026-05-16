@@ -7,26 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="images/Logo.jpg" alt="Navjeevan Junior College logo" />
-        <span class="logo-text">Navjeevan Junior College</span>
-      </a>
-      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav" id="mainNav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="courses.html">Courses</a>
-        <a href="admissions.html">Admissions</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <?php include 'includes/header.php'; ?>
 
   <main class="container page-content">
     <section class="page-header">
@@ -78,18 +59,7 @@
     </section>
 
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2026 Navjeevan Junior College. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="admissions.html">Admissions</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-and-conditions.html">Terms & Conditions</a>
-        <a href="refund-policy.html">Refund Policy</a>
-      </div>
-    </div>
-  </footer>
+  <?php include 'includes/footer.php'; ?>
 
   <script src="js/script.js"></script>
 </body>

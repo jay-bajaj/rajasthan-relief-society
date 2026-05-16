@@ -313,6 +313,10 @@ textarea {
   gap: 1.5rem;
 }
 
+.section-spacing{
+    padding:80px 0;
+}
+
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

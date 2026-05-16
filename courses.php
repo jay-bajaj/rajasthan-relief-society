@@ -1,11 +1,10 @@
+<?php
+$pageTitle =
+"Courses - Navjeevan Junior College";
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Courses | Navjeevan Junior College</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+<?php include 'includes/head.php'; ?>
 <body>
   <?php include 'includes/header.php'; ?>
 
@@ -16,21 +15,37 @@
     </section>
 
     <section class="course-grid">
+
+      <!-- Commerce -->
       <article>
-        <h2>B.Com</h2>
-        <p>Bachelor of Commerce</p>
+          <h2>Commerce</h2>
+          <p class="course-standard">
+              XI & XII
+          </p>
+          <ul>
+              <li>S.P.</li>
+              <li>Mathematics</li>
+              <li>Information Technology</li>
+              <li>Hindi</li>
+              <li>Marathi</li>
+          </ul>
       </article>
+
+      <!-- Science -->
       <article>
-        <h2>B.A.</h2>
-        <p>Psychology</p>
-      </article>
-      <article>
-        <h2>B.Sc IT</h2>
-        <p>Information Technology</p>
-      </article>
-      <article>
-        <h2>B.Sc DS</h2>
-        <p>Data Science</p>
+          <h2>Science</h2>
+          <p class="course-standard">
+              XI & XII
+          </p>
+          <ul>
+              <li>Computer Science</li>
+              <li>Information Technology</li>
+              <li>Psychology</li>
+              <li>Geography</li>
+              <li>Economics</li>
+              <li>Hindi</li>
+              <li>Marathi</li>
+          </ul>
       </article>
     </section>
   </main>
@@ -40,3 +55,4 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+ 

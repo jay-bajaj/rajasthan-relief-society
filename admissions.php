@@ -1,11 +1,11 @@
+<?php
+$pageTitle =
+"Admissions - Navjeevan Junior College";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admissions | Navjeevan Junior College</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+<?php include 'includes/head.php'; ?>
 <body>
   <?php include 'includes/header.php'; ?>
 
@@ -15,32 +15,37 @@
       <p>Start your learning journey with Navjeevan Junior College. Submit your details and we will contact you.</p>
     </section>
 
-    <section class="admissions-form">
-      <form id="admissionsForm">
-        <label>
-          Full Name
-          <input type="text" name="name" placeholder="Your name" required />
-        </label>
-        <label>
-          Email Address
-          <input type="email" name="email" placeholder="you@example.com" required />
-        </label>
-        <label>
-          Course Interest
-          <select name="course" required>
-            <option value="">Select a program</option>
-            <option value="web">Web Development</option>
-            <option value="data">Data Science</option>
-            <option value="design">Creative Design</option>
-            <option value="career">Career Coaching</option>
-          </select>
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="4" placeholder="Tell us more" />
-        </label>
-        <button type="submit" class="btn btn-primary">Submit Application</button>
-      </form>
+    <section class="admissions section-spacing">
+      <div class="container">
+          <div class="admission-grid">
+
+              <!-- 11th -->
+              <div class="admission-card">
+                  <h2>11th Admission</h2>
+                  <p>
+                      Apply online for 11th standard admission for the academic year 2026-27.
+                  </p>
+                  <a href="https://forms.gle/eERF7PSLuvw29KfR7"
+                  target="_blank"
+                  class="btn btn-primary">
+                      Apply Now
+                  </a>
+              </div>
+
+              <!-- 12th -->
+              <div class="admission-card">
+                  <h2>12th Admission</h2>
+                  <p>
+                      Apply online for 12th standard admission for the academic year 2026-27.
+                  </p>
+                  <a href="https://forms.gle/EitqA9Yo74Tb9ZMQ7"
+                  target="_blank"
+                  class="btn btn-primary">
+                      Apply Now
+                  </a>
+              </div>
+          </div>
+      </div>
     </section>
   </main>
 

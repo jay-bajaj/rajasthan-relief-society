@@ -1,6 +1,6 @@
 <footer class="site-footer">
     <div class="container footer-inner">
-        <p>© 2026 Navjeevan Junior College. All rights reserved.</p>
+        <p>&copy; 2026 Navjeevan Junior College. All rights reserved.</p>
         <div class="footer-links">
         <a href="index.php">Home</a>
         <a href="contact.php">Contact</a>

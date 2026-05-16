@@ -1,11 +1,11 @@
+<?php
+$pageTitle =
+"Navjeevan Junior College";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navjeevan Junior College</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+<?php include 'includes/head.php'; ?>
 <body>
   <?php include 'includes/header.php'; ?>
 
@@ -102,18 +102,6 @@
             </div>
         </div>
     </section>
-
-    <section class="newsletter container">
-      <div>
-        <h2>Stay in Touch</h2>
-        <p>Get updates on admissions, new courses, and events.</p>
-      </div>
-      <form id="newsletterForm">
-        <input type="email" name="email" placeholder="Enter your email" required />
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </form>
-    </section>
-
   </main>
 
   <?php include 'includes/footer.php'; ?>

@@ -1,11 +1,10 @@
+<?php
+$pageTitle =
+"Terms and Conditions - Navjeevan Junior College";
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms and Conditions - Navjeevan Junior College</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+<?php include 'includes/head.php'; ?>
 <body>
   <?php include 'includes/header.php'; ?>
 
@@ -73,18 +72,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2026 Navjeevan Junior College. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="index.php">Home</a>
-        <a href="contact.php">Contact</a>
-        <a href="privacy-policy.php">Privacy Policy</a>
-        <a href="terms-and-conditions.php">Terms & Conditions</a>
-        <a href="refund-policy.php">Refund Policy</a>
-      </div>
-    </div>
-  </footer>
+  <?php include 'includes/footer.php'; ?>
 
   <script src="js/script.js"></script>
 </body>

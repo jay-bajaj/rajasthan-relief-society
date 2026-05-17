@@ -4,6 +4,7 @@ session_start();
 // Configure this address for the college admissions inbox before deployment.
 $admissionsEmail = 'admission@bajajdegreecollege.navjeevanvidhalya.in';
 $fromEmail = 'no-reply@bajajdegreecollege.navjeevanvidhalya.in';
+$csvFilePath = __DIR__ . '/storage/admissions.csv';
 
 $allowedCourses = [
   'B.Com',
@@ -32,6 +33,53 @@ function storeFeedback($status, $message, $values = [], $errors = []) {
     'values' => $values,
     'errors' => $errors,
   ];
+}
+
+function writeAdmissionCsv($filePath, $values) {
+  $directory = dirname($filePath);
+  $needsHeader = !file_exists($filePath) || filesize($filePath) === 0;
+
+  if (!is_dir($directory) && !mkdir($directory, 0755, true)) {
+    return false;
+  }
+
+  $handle = fopen($filePath, 'ab');
+
+  if (!$handle) {
+    return false;
+  }
+
+  // Keep the CSV directly usable in Excel/Google Sheets.
+  if ($needsHeader) {
+    $headerWritten = fputcsv($handle, [
+      'Date',
+      'Full Name',
+      'Phone Number',
+      'Email Address',
+      'Course',
+      '12th Percentage',
+      'Message',
+    ]);
+
+    if ($headerWritten === false) {
+      fclose($handle);
+      return false;
+    }
+  }
+
+  $rowWritten = fputcsv($handle, [
+    date('Y-m-d H:i:s'),
+    $values['full_name'],
+    $values['phone'],
+    $values['email'],
+    $values['course'],
+    $values['percentage'],
+    $values['message'],
+  ]);
+
+  fclose($handle);
+
+  return $rowWritten !== false;
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -85,6 +133,13 @@ if ($errors) {
 
 $safeValues = $values;
 
+$csvSaved = writeAdmissionCsv($csvFilePath, $safeValues);
+
+if (!$csvSaved) {
+  storeFeedback('error', 'We could not save your inquiry right now. Please try again later.', $values);
+  redirectToForm();
+}
+
 $subject = 'New Admission Inquiry - Bajaj Degree College';
 
 $emailBody = "New Admission Inquiry - Bajaj Degree College\n\n";
@@ -105,7 +160,7 @@ $headers = [
 $sent = mail($admissionsEmail, $subject, $emailBody, implode("\r\n", $headers));
 
 if (!$sent) {
-  storeFeedback('error', 'We could not send your inquiry right now. Please try again later.', $values);
+  storeFeedback('warning', 'Your inquiry was saved, but the email notification could not be sent. Our team will review the saved submission.');
   redirectToForm();
 }
 

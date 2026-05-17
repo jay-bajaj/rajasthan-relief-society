@@ -120,6 +120,7 @@ includes/
 css/
 js/
 images/
+storage/
 ```
 
 ---
@@ -227,6 +228,7 @@ Before launch, confirm PHP `mail()` works on the shared hosting account and veri
 - Confirm Bajaj Degree College does not show Junior College XI/XII courses.
 - Confirm Junior College does not show Bajaj Degree College courses.
 - Confirm Bajaj `process-admission.php` is uploaded with `admissions.php`.
+- Confirm Bajaj `storage/.htaccess` is uploaded.
 - Confirm Bajaj admissions recipient email is correct.
 
 ---

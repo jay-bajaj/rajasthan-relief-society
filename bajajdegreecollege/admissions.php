@@ -19,6 +19,18 @@ function fieldError($field, $errors) {
   return $errors[$field] ?? '';
 }
 
+function alertClass($status) {
+  if ($status === 'success') {
+    return 'form-alert-success';
+  }
+
+  if ($status === 'warning') {
+    return 'form-alert-warning';
+  }
+
+  return 'form-alert-error';
+}
+
 $courseOptions = [
   'B.Com',
   'B.A Psychology',
@@ -47,7 +59,7 @@ $courseOptions = [
         </div>
 
         <?php if ($status && $message): ?>
-          <div class="form-alert <?php echo $status === 'success' ? 'form-alert-success' : 'form-alert-error'; ?>">
+          <div class="form-alert <?php echo alertClass($status); ?>">
             <?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?>
           </div>
         <?php endif; ?>

@@ -107,6 +107,14 @@ Bajaj Degree College course area:
 
 Bajaj Degree College uses a lightweight custom PHP mail form for admissions inquiries. Keep it database-free and file-upload-free.
 
+Admissions submissions are also stored as CSV under the Bajaj site:
+
+- folder: `storage/`
+- file: `storage/admissions.csv`
+- purpose: private server-side admissions records exportable to Excel or Google Sheets
+- access protection: `storage/.htaccess` denies public web access
+- columns: Date, Full Name, Phone Number, Email Address, Course, 12th Percentage, Message
+
 ---
 
 ## Include Conventions

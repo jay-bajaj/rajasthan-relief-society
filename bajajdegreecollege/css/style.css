@@ -482,6 +482,12 @@ textarea {
   color: #991b1b;
 }
 
+.form-alert-warning {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

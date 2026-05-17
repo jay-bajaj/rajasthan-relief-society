@@ -15,6 +15,7 @@
 - Removed Bajaj Degree College placeholder Career Development course card
 - Removed Bajaj Degree College homepage Student Support feature card
 - Kept Junior College and Bajaj Degree College courses separate
+- Created custom PHP mail admissions form for Bajaj Degree College
 
 ## High Priority
 
@@ -32,10 +33,10 @@
 
 ## Bajaj Degree College
 
-- Confirm final admission form URLs
-- Replace Bajaj `contact.php` admission placeholder links with real form links
 - Confirm final course names/spelling with college office
 - Confirm whether Bajaj needs separate contact email/phone/address
+- Confirm production admissions recipient email in `process-admission.php`
+- Test PHP `mail()` delivery on shared hosting
 
 ## UI Improvements
 

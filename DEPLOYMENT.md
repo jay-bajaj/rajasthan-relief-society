@@ -8,7 +8,6 @@ The project is intentionally static/PHP-only:
 
 - no WordPress
 - no database
-- no custom backend
 - no uploads
 - no authentication
 
@@ -112,6 +111,7 @@ index.php
 about.php
 courses.php
 admissions.php
+process-admission.php
 contact.php
 privacy-policy.php
 terms-and-conditions.php
@@ -199,14 +199,19 @@ These should open in new tabs.
 
 ### Bajaj Degree College
 
-Bajaj admission form URLs are not finalized yet.
+Bajaj Degree College uses a lightweight PHP mail form:
 
-Current placeholder behavior:
+- Form page: `admissions.php`
+- Processor: `process-admission.php`
+- Configurable recipient variable near the top of `process-admission.php`
 
-- First Year Degree Admission links to `contact.php`
-- Transfer / Direct Admission links to `contact.php`
+Configured admissions recipient:
 
-Replace these links when final forms are available.
+```text
+admission@bajajdegreecollege.navjeevanvidhalya.in
+```
+
+Before launch, confirm PHP `mail()` works on the shared hosting account and verify this mailbox receives test submissions.
 
 ---
 
@@ -221,6 +226,8 @@ Replace these links when final forms are available.
 - Confirm main-domain links use actual subdomains.
 - Confirm Bajaj Degree College does not show Junior College XI/XII courses.
 - Confirm Junior College does not show Bajaj Degree College courses.
+- Confirm Bajaj `process-admission.php` is uploaded with `admissions.php`.
+- Confirm Bajaj admissions recipient email is correct.
 
 ---
 
@@ -245,6 +252,7 @@ Check on each site:
 - navigation links work
 - courses page is correct
 - admissions page is correct
+- Bajaj admissions form validates and sends mail
 - contact page loads
 - map loads
 - legal links load

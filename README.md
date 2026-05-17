@@ -28,6 +28,7 @@ This repository contains the frontend architecture for the Rajasthan Relief Soci
 - Vanilla JavaScript
 - Responsive design
 - Google Forms for Junior College admissions
+- PHP mail form for Bajaj Degree College admissions
 - Linux cPanel hosting
 
 ## Key Features

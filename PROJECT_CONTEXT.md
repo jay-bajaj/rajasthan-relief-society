@@ -21,7 +21,8 @@ The architecture replaces a previously compromised WordPress site with a small, 
 - Keep each public site deployable as a standalone cPanel document root.
 - Keep the main domain as a parent landing page that links to real subdomains.
 - Keep Junior College and Bajaj Degree College content separate.
-- Use external form links for admissions instead of building a backend.
+- Use external form links or lightweight PHP mail handlers for admissions.
+- Do not use a database for admissions.
 - Prefer simple, readable code over abstractions that do not reduce real maintenance work.
 
 ---
@@ -104,7 +105,7 @@ Bajaj Degree College course area:
 - BSc Chemistry
 - BSc Information Technology (IT)
 
-Bajaj Degree College admission form URLs are not finalized yet, so placeholders should remain simple and easy to replace.
+Bajaj Degree College uses a lightweight custom PHP mail form for admissions inquiries. Keep it database-free and file-upload-free.
 
 ---
 

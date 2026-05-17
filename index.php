@@ -31,14 +31,14 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Learning with purpose</p>
-          <h1>Navjeevan builds confident learners for every next step.</h1>
+          <h1>Rajasthan Relief Society builds confident learners for every next step.</h1>
           <p>
             A growing education community in Mumbai focused on strong academics,
             steady guidance, and values that help students move forward with clarity.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/index.php">Visit Junior College</a>
-            <a class="btn btn-secondary" href="#institutions">Explore Institutions</a>
+            <a class="btn btn-secondary" href="https://bajajdegreecollege.navjeevanvidhalya.in/index.php">Visit Bajaj Degree College</a>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Our institutions</p>
-          <h2>Choose the Navjeevan section you want to visit.</h2>
+          <h2>Choose the section you want to visit.</h2>
         </div>
         <div class="institution-grid">
           <article class="institution-card">
@@ -62,16 +62,16 @@
             </div>
             <a class="text-link" href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/index.php">Open Junior College</a>
           </article>
-          <article class="institution-card muted">
+          <article class="institution-card">
             <div>
-              <p class="card-kicker">Coming soon</p>
-              <h3>Additional Navjeevan Programs</h3>
+              <p class="card-kicker">Active site</p>
+              <h3>Bajaj Degree College</h3>
               <p>
-                The main domain is ready to grow as new sections, school pages,
-                announcements, and shared resources are added.
+                Undergraduate programs, admissions guidance, campus information,
+                and student support resources for degree college families.
               </p>
             </div>
-            <span class="text-link disabled">In planning</span>
+            <a class="text-link" href="https://bajajdegreecollege.navjeevanvidhalya.in/index.php">Open Bajaj Degree College</a>
           </article>
         </div>
       </div>
@@ -80,12 +80,12 @@
     <section class="about-section" id="about">
       <div class="container about-grid">
         <div>
-          <p class="eyebrow">About Navjeevan</p>
+          <p class="eyebrow">About Rajasthan Relief Society</p>
           <h2>Education rooted in guidance, discipline, and opportunity.</h2>
         </div>
         <div class="about-copy">
           <p>
-            Navjeevan supports students with a balanced environment where academics,
+            Rajasthan Relief Society supports students with a balanced environment where academics,
             personal development, and practical readiness work together.
           </p>
           <p>
@@ -102,7 +102,10 @@
           <p class="eyebrow">Contact</p>
           <h2>Need admission or campus information?</h2>
         </div>
-        <a class="btn btn-primary" href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/contact.php">Contact Junior College</a>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/contact.php">Contact Junior College</a>
+          <a class="btn btn-secondary" href="https://bajajdegreecollege.navjeevanvidhalya.in/contact.php">Contact Bajaj Degree College</a>
+        </div>
       </div>
     </section>
   </main>
@@ -110,7 +113,10 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; 2026 Rajasthan Relief Society. All rights reserved.</p>
-      <a href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/privacy-policy.php">Privacy Policy</a>
+      <div class="footer-links">
+        <a href="https://navjeevanjuniorcollege.navjeevanvidhalya.in/privacy-policy.php">Junior College Privacy</a>
+        <a href="https://bajajdegreecollege.navjeevanvidhalya.in/privacy-policy.php">Bajaj Degree College Privacy</a>
+      </div>
     </div>
   </footer>
 </body>

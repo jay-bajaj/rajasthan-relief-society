@@ -251,6 +251,17 @@ img {
   color: #0f172a;
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.contact-actions .btn {
+  justify-self: auto;
+}
+
 .site-footer {
   background: #0f172a;
   color: #e2e8f0;
@@ -274,6 +285,12 @@ img {
   text-decoration: none;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 @media (max-width: 760px) {
   .container {
     width: min(100%, 100% - 1.5rem);
@@ -287,8 +304,8 @@ img {
     white-space: normal;
   }
 
-  .contact-inner .btn {
-    justify-self: start;
+  .contact-actions {
+    justify-content: flex-start;
   }
 }
 

@@ -28,6 +28,7 @@
 - Add `.htaccess` to each live document root
 - Verify HTTPS redirects
 - Remove old WordPress files completely from hosting
+- Follow `DEPLOYMENT.md` during cPanel upload and verification
 
 ## Bajaj Degree College
 

@@ -15,6 +15,12 @@ This repository contains the frontend architecture for the Rajasthan Relief Soci
 - `bajajdegreecollege/`: Bajaj Degree College source
 - `navjeevan_project_context/`: project handoff notes
 
+## Context Files
+
+- `PROJECT_CONTEXT.md`: architecture, design, domains, admissions, and current decisions
+- `TODO.md`: completed work and remaining tasks
+- `DEPLOYMENT.md`: cPanel upload mapping, HTTPS, `.htaccess`, and deployment checks
+
 ## Stack
 
 - PHP includes

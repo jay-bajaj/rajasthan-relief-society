@@ -1,308 +1,102 @@
 # Navjeevan Website Project Context
 
-## Project Overview
+## Purpose
 
-This project is a lightweight, responsive educational website system for the Rajasthan Relief Society / Navjeevan education group.
+This project is a lightweight website system for Rajasthan Relief Society / Navjeevan educational institutions.
 
-It currently covers:
+It supports:
 
-1. Main domain institutional landing page
-2. Navjeevan Junior College subdomain site
-3. Bajaj Degree College subdomain site
+- `navjeevanvidhalya.in` as the main institutional landing page
+- `navjeevanjuniorcollege.navjeevanvidhalya.in` as the Junior College site
+- `bajajdegreecollege.navjeevanvidhalya.in` as the Bajaj Degree College site
 
-The project originally started as a static HTML/CSS website and later evolved into a reusable PHP-templated architecture using PHP includes.
-
-The old WordPress website was compromised with spam injections and SEO spam content. The new architecture intentionally avoids WordPress, plugins, databases, uploads, authentication, and heavy CMS systems.
+The architecture replaces a previously compromised WordPress site with a small, maintainable, low-attack-surface PHP/static setup.
 
 ---
 
-## Architecture
+## High-Level Decisions
 
-### Current Stack
-
-- PHP includes
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Responsive design
-- Google Forms integration for Junior College admissions
-- Linux cPanel hosting
-
-No database is currently used.
+- Use PHP includes, HTML, CSS, and vanilla JavaScript only.
+- Do not use WordPress, plugins, databases, uploads, authentication, or a CMS.
+- Keep each public site deployable as a standalone cPanel document root.
+- Keep the main domain as a parent landing page that links to real subdomains.
+- Keep Junior College and Bajaj Degree College content separate.
+- Use external form links for admissions instead of building a backend.
+- Prefer simple, readable code over abstractions that do not reduce real maintenance work.
 
 ---
 
-## Current Local Folder Structure
+## Structure
 
-Workspace root:
+Root-level files support the main domain:
 
 ```text
-E:/Navjeevan/StaticWebsite
-|-- index.php
-|-- css/
-|   `-- style.css
-|-- images/
-|   |-- favicon.png
-|   |-- Logo.jpg
-|   `-- navjeevanMainBuilding.jpeg
-|-- juniorCollege/
-|   |-- index.php
-|   |-- about.php
-|   |-- courses.php
-|   |-- admissions.php
-|   |-- contact.php
-|   |-- privacy-policy.php
-|   |-- terms-and-conditions.php
-|   |-- refund-policy.php
-|   |-- includes/
-|   |-- css/
-|   |-- js/
-|   `-- images/
-|-- bajajdegreecollege/
-|   |-- index.php
-|   |-- about.php
-|   |-- courses.php
-|   |-- admissions.php
-|   |-- contact.php
-|   |-- privacy-policy.php
-|   |-- terms-and-conditions.php
-|   |-- refund-policy.php
-|   |-- includes/
-|   |-- css/
-|   |-- js/
-|   `-- images/
-`-- navjeevan_project_context/
-    |-- PROJECT_CONTEXT.md
-    |-- README.md
-    `-- TODO.md
+index.php
+css/
+images/
+README.md
+TODO.md
+DEPLOYMENT.md
+PROJECT_CONTEXT.md
 ```
 
-The `juniorCollege/` folder is local source code for the live subdomain `navjeevanjuniorcollege.navjeevanvidhalya.in`.
+College source folders:
 
-The `bajajdegreecollege/` folder is local source code for the live subdomain `bajajdegreecollege.navjeevanvidhalya.in`.
+```text
+juniorCollege/
+bajajdegreecollege/
+```
 
-On cPanel, each subdomain may have its own document root. Do not assume the live Junior College site is available at `navjeevanvidhalya.in/juniorCollege/`.
+Each college folder follows the same basic shape:
+
+```text
+index.php
+about.php
+courses.php
+admissions.php
+contact.php
+privacy-policy.php
+terms-and-conditions.php
+refund-policy.php
+includes/
+css/
+js/
+images/
+```
+
+Live hosting may not mirror these folder names exactly. In cPanel, each subdomain should point to its own document root. Upload the contents of each college folder into the matching subdomain document root.
 
 ---
 
-## Domains Architecture
+## Domain Conventions
 
 Main domain:
 
-- `navjeevanvidhalya.in`
-- Purpose: Rajasthan Relief Society / institutional landing page
-- Current root files: `index.php`, `css/style.css`, `images/`
-- Links out to the real subdomain URLs
+```text
+navjeevanvidhalya.in
+```
 
 Subdomains:
 
-- `navjeevanjuniorcollege.navjeevanvidhalya.in`
-- `bajajdegreecollege.navjeevanvidhalya.in`
-
-Current main-domain links should use absolute subdomain URLs:
-
-- `https://navjeevanjuniorcollege.navjeevanvidhalya.in/index.php`
-- `https://navjeevanjuniorcollege.navjeevanvidhalya.in/contact.php`
-- `https://bajajdegreecollege.navjeevanvidhalya.in/index.php`
-- `https://bajajdegreecollege.navjeevanvidhalya.in/contact.php`
-
----
-
-## Includes Architecture
-
-Each college subsite uses PHP includes.
-
-### head.php
-
-Contains:
-
-- meta charset
-- viewport
-- favicon
-- stylesheet link
-- dynamic page title support
-
-Example:
-
-```php
-<title>
-  <?php echo $pageTitle; ?>
-</title>
+```text
+navjeevanjuniorcollege.navjeevanvidhalya.in
+bajajdegreecollege.navjeevanvidhalya.in
 ```
 
-### header.php
-
-Contains:
-
-- navbar
-- logo
-- responsive menu button
-- navigation links
-
-Should not contain:
-
-- `<!DOCTYPE html>`
-- `<html>`
-- `<head>`
-- `<body>`
-
-### footer.php
-
-Contains:
-
-- footer content
-- legal links
-- quick links
-- copyright
-
-Should not contain opening HTML tags.
+Production links from the main domain should use the real subdomain URLs. Do not assume the Junior College production site lives at `/juniorCollege/` under the main domain.
 
 ---
 
-## Dynamic Page Titles
+## Content Boundaries
 
-Pages define titles before including `head.php`.
+Junior College and Bajaj Degree College courses must not be mixed.
 
-Example:
+Junior College course area:
 
-```php
-<?php
-$pageTitle = "About Us - Navjeevan Junior College";
-?>
+- Commerce for XI/XII
+- Science for XI/XII
 
-<!DOCTYPE html>
-<html lang="en">
-<?php include 'includes/head.php'; ?>
-```
-
----
-
-## Responsive Navbar
-
-HTML IDs:
-
-- Button: `menuToggle`
-- Navbar: `mainNav`
-
-JavaScript:
-
-```js
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-
-if (menuToggle && mainNav) {
-  menuToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-  });
-}
-```
-
-Mobile CSS pattern:
-
-```css
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: inline-flex;
-  }
-
-  .site-nav {
-    display: none;
-    flex-direction: column;
-  }
-
-  .site-nav.active {
-    display: flex;
-  }
-}
-```
-
----
-
-## Design System
-
-The main domain and college subsites should look visually related.
-
-Core design language:
-
-- clean
-- lightweight
-- maintainable
-- responsive
-- scalable
-- institutional
-
-Current shared visual cues:
-
-- white sticky header
-- logo plus text lockup
-- slate text palette
-- primary blue `#1d4ed8`
-- dark footer `#0f172a`
-- light page background `#f8fafc`
-- rounded white cards
-- pill-style `.btn` buttons
-- CSS grid layouts
-
-Avoid:
-
-- excessive animations
-- overdesigned sections
-- unnecessary frameworks
-- plugin-heavy systems
-- visual styles that diverge strongly from the Junior College site
-
----
-
-## Button System
-
-Reusable button architecture:
-
-- `.btn`
-- `.btn-primary`
-- `.btn-secondary`
-
-Example:
-
-```html
-<a class="btn btn-primary" href="admissions.php">
-  Apply Now
-</a>
-```
-
-Current button styling includes:
-
-- `inline-flex`
-- rounded pill style
-- hover transform
-- transition animation
-
----
-
-## Course Structures
-
-Junior College and Bajaj Degree College courses must stay separate.
-
-### Navjeevan Junior College Courses
-
-Commerce (XI & XII):
-
-- S.P.
-- Mathematics
-- Information Technology
-- Hindi
-- Marathi
-
-Science (XI & XII):
-
-- Computer Science
-- Information Technology
-- Psychology
-- Geography
-- Economics
-- Hindi
-- Marathi
-
-### Bajaj Degree College Courses
+Bajaj Degree College course area:
 
 - BA Psychology
 - Data Science
@@ -310,129 +104,88 @@ Science (XI & XII):
 - BSc Chemistry
 - BSc Information Technology (IT)
 
-Bajaj Degree College should not show Junior College XI/XII streams.
+Bajaj Degree College admission form URLs are not finalized yet, so placeholders should remain simple and easy to replace.
 
 ---
 
-## Admissions
+## Include Conventions
 
-Admissions use links instead of a custom backend.
+College subsites use PHP includes for shared layout.
 
-### Navjeevan Junior College
-
-Uses Google Forms:
-
-- 11th Admissions: `https://forms.gle/eERF7PSLuvw29KfR7`
-- 12th Admissions: `https://forms.gle/EitqA9Yo74Tb9ZMQ7`
-
-Implementation:
-
-- button-based links
-- open forms in new tabs
-- no embedded forms initially
-
-### Bajaj Degree College
-
-As of this context update, final admission form URLs are not provided.
-
-Current implementation:
-
-- `First Year Degree Admission` card links to `contact.php`
-- `Transfer / Direct Admission` card links to `contact.php`
-
-Replace these with actual admission form URLs when available.
+- `includes/head.php` owns shared head metadata, stylesheet link, favicon, and dynamic title output.
+- `includes/header.php` owns logo and navigation only.
+- `includes/footer.php` owns footer and legal links only.
+- Pages define `$pageTitle` before including `head.php`.
+- Include files should not contain duplicate document wrappers such as `<!DOCTYPE html>`, `<html>`, or `<body>`.
 
 ---
 
-## Current Features Completed
+## Frontend Conventions
 
-- Main domain parent landing page
-- Main domain links to both college subdomains
-- Responsive design
-- PHP includes for both college subsites
-- Reusable layouts
-- Dynamic titles
-- Responsive navbar
-- Mobile hamburger menu
-- Gallery section
-- Contact page
-- Google Maps iframe
-- Legal pages
-- Junior College admissions system using Google Forms
-- Bajaj Degree College placeholder admissions flow
-- Favicon setup
-- Reusable buttons
-- CSS grid layouts
-- Separate Junior College and Bajaj Degree College course pages
+The main domain and college subsites should feel visually related.
+
+Preferred visual language:
+
+- institutional
+- lightweight
+- clean
+- responsive
+- calm
+- maintainable
+
+Shared styling conventions:
+
+- white sticky header
+- logo plus institution name
+- slate text palette
+- primary blue `#1d4ed8`
+- dark footer `#0f172a`
+- light background `#f8fafc`
+- rounded white cards
+- pill-style buttons
+- CSS grid for responsive layouts
+- minimal animation
+
+Avoid introducing frameworks or large libraries unless there is a strong reason.
 
 ---
 
-## Security Decisions
+## Security Constraints
 
-The project intentionally avoids:
+The security posture is intentionally conservative because of the previous WordPress compromise.
+
+Avoid:
 
 - WordPress
 - plugins
 - databases
-- uploads
+- file uploads
 - authentication systems
+- unnecessary server-side logic
 
-Reason:
+Expected hosting hardening:
 
-Reduce attack surface after the previous WordPress compromise.
+- HTTPS redirects
+- directory listing disabled
+- old WordPress files removed from live document roots
 
----
-
-## Recommended .htaccess
-
-```apache
-Options -Indexes
-
-RewriteEngine On
-
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-```
-
-Use this in each live document root as appropriate.
+Operational deployment details belong in `DEPLOYMENT.md`.
 
 ---
 
-## Current TODO
+## Documentation Boundaries
 
-- Finalize SSL/HTTPS
-- Finalize cPanel subdomain deployment
-- Add `robots.txt`
-- Add `sitemap.xml`
-- SEO optimization
-- Open Graph tags
-- Structured data
-- Final typography polish
-- Gallery improvements
-- Footer refinement
-- Final deployment cleanup
-- Replace Bajaj Degree College admission placeholder links when final form URLs are available
+Keep this file limited to:
 
----
+- high-level decisions
+- structure
+- constraints
+- conventions
 
-## Hosting Notes
+Do not add tiny implementation details, task lists, deployment steps, or one-off change logs here.
 
-Hosting:
+Use:
 
-- Linux cPanel hosting
-
-Architecture chosen because it is:
-
-- lightweight
-- secure
-- low maintenance
-- inexpensive to host
-- easy to deploy
-
----
-
-## Created
-
-Generated for project continuation and Codex/project handoff.
-
-Last updated locally after creation of the main landing page and Bajaj Degree College subdomain source folder.
+- `README.md` for project summary
+- `TODO.md` for current work and pending tasks
+- `DEPLOYMENT.md` for cPanel and deployment instructions
